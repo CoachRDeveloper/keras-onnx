@@ -39,7 +39,8 @@ if is_tf2:
     def is_subclassed(layer):
         """Returns True if the object is a subclassed layer or subclassed model."""
         return (layer.__module__.find('keras.engine') == -1 and
-                layer.__module__.find('keras.layers') == -1)
+                layer.__module__.find('keras.layers') == -1 and
+                layer.__module__.find('tensorflow_addons.layers.normalizations') == -1)
 else:
     tensorflow = _tf
 
